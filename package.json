@@ -4,7 +4,9 @@
   "description": "Demo solution of Playwright",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "lint": "prettier . --write && eslint",
+    "pw:ci": "playwright test",
+    "pw:local": "playwright test --ui"
   },
   "keywords": [
     "automation",
@@ -12,13 +14,17 @@
   ],
   "author": "Sergiu Bacanu",
   "license": "ISC",
-  "devDependencies": {
-    "jest": "^26.6.3",
-    "jest-playwright": "0.0.1",
-    "playwright": "^1.5.2"
-  },
   "dependencies": {
-    "@babel/core": "^7.12.3",
-    "@babel/preset-env": "^7.12.1"
+    "@playwright/test": "^1.50.1",
+    "@types/node": "^22.13.4",
+    "dotenv": "^16.4.7"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.20.0",
+    "eslint": "^9.20.1",
+    "eslint-config-prettier": "^10.0.1",
+    "globals": "^15.15.0",
+    "prettier": "^3.5.2",
+    "typescript-eslint": "^8.24.0"
   }
 }

@@ -1,0 +1,1 @@
+// Add common types here.
