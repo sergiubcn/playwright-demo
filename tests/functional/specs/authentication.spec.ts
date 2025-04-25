@@ -20,4 +20,17 @@ test.describe("Authentication", () => {
     await loginPg.login(lockedOutUser.password, lockedOutUser.username);
     expect(await loginPg.getErrorMessage()).toBeTruthy();
   });
+
+  // Windsurf POC
+  // Test generated almost solely by Windsurf, including the page component objects.
+  // It even got the correct UI element selectors.
+  test("A user can logout", async ({ page }) => {
+    const loginPg = loginPage(page);
+    await loginPg.load();
+    await loginPg.login(validUser.password, validUser.username);
+
+    const hd = header(page);
+    await hd.logout();
+    await expect(await hd.getShoppingCartContainer()).toBeHidden();
+  });
 });

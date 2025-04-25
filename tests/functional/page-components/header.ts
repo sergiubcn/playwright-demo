@@ -6,6 +6,8 @@ import { Locator, Page } from "@playwright/test";
  * @returns An object with access to interactions and elements.
  */
 export const header = (page: Page) => {
+  const logoutLink = page.locator('#logout_sidebar_link');
+  const menuButton = page.locator('#react-burger-menu-btn');
   const shoppingCartContainer = page.locator("#shopping_cart_container");
   const shoppingCartBadge = page.locator("[data-test=shopping-cart-badge]");
 
@@ -22,5 +24,12 @@ export const header = (page: Page) => {
      */
     getShoppingCartContainer: async (): Promise<Locator> =>
       shoppingCartContainer,
+    /**
+     * Logs out the current user by clicking the menu button and then the logout link.
+     */
+    logout: async (): Promise<void> => {
+      await menuButton.click();
+      await logoutLink.click();
+    },
   };
 };
