@@ -6,8 +6,8 @@ import { Locator, Page } from "@playwright/test";
  * @returns An object with access to interactions and elements.
  */
 export const header = (page: Page) => {
-  const logoutLink = page.locator('#logout_sidebar_link');
-  const menuButton = page.locator('#react-burger-menu-btn');
+  const logoutLink = page.locator("#logout_sidebar_link");
+  const menuButton = page.locator("#react-burger-menu-btn");
   const shoppingCartContainer = page.locator("#shopping_cart_container");
   const shoppingCartBadge = page.locator("[data-test=shopping-cart-badge]");
 

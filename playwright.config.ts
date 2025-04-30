@@ -6,8 +6,7 @@ import dotenv from "dotenv";
 dotenv.config();
 
 export default defineConfig({
-  // Look for test files in the "tests" directory, relative to this configuration file.
-  testDir: "./tests/functional/specs/",
+  testMatch: ["**/*.spec.ts"],
 
   // Run all tests in parallel.
   fullyParallel: true,
